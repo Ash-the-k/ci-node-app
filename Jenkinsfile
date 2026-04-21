@@ -22,13 +22,13 @@ pipeline {
                 bat 'node test'
             }
         }
-        post {
+    }
+    post {
             success {
                 echo 'CI Pipeline Success'
             }
             failure {
                 echo 'CI Pipeline Failed!'
             }
-        }
     }
 }
