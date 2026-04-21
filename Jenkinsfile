@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/Ash-the-k/ci-node-app.git'
-            }
-        }
         stage('Install Dependencies') {
             steps {
                 bat 'npm install'
@@ -23,12 +18,13 @@ pipeline {
             }
         }
     }
+
     post {
-            success {
-                echo 'CI Pipeline Success'
-            }
-            failure {
-                echo 'CI Pipeline Failed!'
-            }
+        success {
+            echo 'CI Pipeline Success'
+        }
+        failure {
+            echo 'CI Pipeline Failed!'
+        }
     }
 }
